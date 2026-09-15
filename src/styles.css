@@ -1,0 +1,608 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap");
+
+@import "@designcodeio/threeui/style.css";
+
+:root {
+  --color-primary: #5B3DF5;
+  --color-white: #ffffff;
+  --color-primary-dark: #4527D6;
+  --color-lavender: #EFEBFF;
+  --color-lavender-2: #F4F1FF;
+  --color-mint: #E4F7EE;
+  --color-mint-text: #1E8A5F;
+  --color-blue-tint: #EAF2FF;
+  --color-bg: #FBFAFD;
+  --color-card: #FFFFFF;
+  --color-text: #16131F;
+  --color-text-white: #ffffff;
+  --color-text-muted: #6B6478;
+  --color-border: #ECE8F5;
+  --radius-lg: 28px;
+  --radius-md: 20px;
+  --radius-sm: 14px;
+  --shadow-soft: 0 10px 30px rgba(30, 20, 60, 0.06);
+  --shadow-card: 0 6px 20px rgba(30, 20, 60, 0.05);
+  --font-sans: "Playfair Display", Georgia, serif,'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-serif: "Playfair Display", Georgia, serif;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-sans);
+  scroll-behavior: smooth;
+}
+
+body { -webkit-font-smoothing: antialiased; }
+
+a { text-decoration: none; color: inherit; }
+
+.container-wide {
+  width: 100%;
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.section { padding: 88px 0; }
+@media (max-width: 768px) {
+  .section { padding: 56px 0; }
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--color-primary);
+  background: var(--color-lavender);
+  padding: 6px 14px;
+  border-radius: 999px;
+}
+
+h1, h2, h3, h4 { font-family: var(--font-sans); font-weight: 700; letter-spacing: -0.02em; line-height: 1.1; margin: 0; }
+
+.italic-serif {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 400;
+  color: var(--color-primary);
+}
+
+.section-title { font-size: clamp(28px, 4vw, 44px); }
+
+.text-muted-custom { color: var(--color-text-muted); }
+
+.btn-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 13px 26px;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 15px;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+  white-space: nowrap;
+}
+.btn-pill:active { transform: scale(0.97); }
+
+.btn-primary-pill {
+  background: var(--color-primary);
+  color: #fff;
+  box-shadow: 0 10px 24px rgba(91, 61, 245, 0.28);
+}
+.btn-primary-pill:hover { background: var(--color-primary-dark); transform: translateY(-2px); color: #fff; }
+
+.btn-outline-pill {
+  background: transparent;
+  color: var(--color-text);
+  border: 1.5px solid var(--color-border);
+}
+.btn-outline-pill:hover { border-color: var(--color-primary); color: var(--color-primary); }
+
+.btn-outline-pill-special {
+  background: transparent;
+  color: var(--color-text-white);
+  border: 1.5px solid var(--color-border);
+}
+.btn-outline-pill-special:hover { border-color: var(--color-white); color: var(--color-primary); background: var(--color-white); }
+
+.btn-ghost-pill {
+  background: var(--color-lavender);
+  color: var(--color-primary);
+}
+.btn-ghost-pill:hover { background: #e2dbff; }
+
+.card-surface {
+  background: var(--color-card);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-card);
+}
+
+.card-lift { transition: transform 0.25s ease, box-shadow 0.25s ease; }
+.card-lift:hover { transform: translateY(-6px); box-shadow: var(--shadow-soft); }
+
+.tint-lavender { background: var(--color-lavender-2); }
+.tint-mint { background: var(--color-mint); }
+.tint-blue { background: var(--color-blue-tint); }
+
+.badge-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12.5px;
+  font-weight: 700;
+  padding: 5px 12px;
+  border-radius: 999px;
+  letter-spacing: 0.02em;
+}
+.badge-good { background: var(--color-mint); color: var(--color-mint-text); }
+.badge-warn { background: #FFF3DC; color: #9A6B00; }
+.badge-bad { background: #FDE8E8; color: #C23434; }
+.badge-info { background: var(--color-lavender); color: var(--color-primary); }
+
+.dot { width: 8px; height: 8px; border-radius: 50%; display: inline-block; }
+.dot-green { background: #22B573; }
+.dot-gray { background: #B7B2C4; }
+
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-thumb { background: #DDD6F5; border-radius: 10px; }
+
+/* ============================================================
+   Aceternity UI — Skewed Lines background
+   Uniform 1px grid with a diagonal drift and radial mask.
+   ============================================================ */
+.skew-lines-bg {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  -webkit-mask-image: radial-gradient(ellipse 90% 70% at 50% 20%, black 45%, transparent 100%);
+  mask-image: radial-gradient(ellipse 90% 70% at 50% 20%, black 45%, transparent 100%);
+}
+
+.skew-lines-bg::before {
+  content: "";
+  position: absolute;
+  /* Overscan top/left by exactly one 46px cell so the drift never exposes an edge. */
+  top: -46px;
+  left: -46px;
+  width: calc(100% + 46px);
+  height: calc(100% + 46px);
+  /* Axis-aligned 1px lines at integer stops: crisp, perfectly uniform cells.
+     (The old skewY/skewX made some lines render faint or missing at certain widths.) */
+  background-image:
+    repeating-linear-gradient(
+      to right,
+      rgba(91, 61, 245, 0.13) 0 1px,
+      transparent 1px 46px
+    ),
+    repeating-linear-gradient(
+      to bottom,
+      rgba(91, 61, 245, 0.08) 0 1px,
+      transparent 1px 46px
+    );
+  will-change: transform;
+  animation: grid-lines-drift 4s linear infinite;
+}
+
+/* Moves exactly one 46px cell per loop — seamless, compositor-only, and clearly visible. */
+@keyframes grid-lines-drift {
+  from { transform: translate3d(0, 0, 0); }
+  to { transform: translate3d(46px, 46px, 0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .skew-lines-bg::before { animation: none; }
+}
+
+/* ============================================================
+   Moody pill navigation dock (threeui AnimatedTopDock physics)
+   ============================================================ */
+.moody-dock-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.moody-dock {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 5px;
+  border: 1px solid var(--color-border);
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.86);
+  backdrop-filter: blur(16px) saturate(160%);
+  -webkit-backdrop-filter: blur(16px) saturate(160%);
+  box-shadow: 0 12px 34px rgba(30, 20, 60, 0.1), inset 0 1px rgba(255, 255, 255, 0.7);
+}
+
+.moody-dock[data-dock-state="active"] .moody-dock__pill,
+.moody-dock[data-dock-state="focus"] .moody-dock__pill {
+  border-color: rgba(91, 61, 245, 0.28);
+}
+
+.moody-dock__pill {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  height: 34px;
+  padding: 0 15px;
+  border: 1px solid transparent;
+  border-radius: 11px;
+  background: transparent;
+  color: var(--color-text-muted);
+  font-weight: 600;
+  font-size: 13.5px;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: color 0.15s ease, background 0.18s ease, border-color 0.18s ease, box-shadow 0.18s ease;
+  will-change: width, height, transform;
+  transform-origin: 50% 0;
+}
+
+.moody-dock__pill:hover { color: var(--color-primary); }
+
+.moody-dock__pill.active {
+  color: var(--color-primary);
+  background: var(--color-lavender);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.8), 0 2px 8px rgba(91, 61, 245, 0.12);
+}
+
+.moody-dock__pill[data-dock-near="true"] {
+  color: var(--color-primary);
+  background: rgba(239, 235, 255, 0.55);
+}
+
+.moody-dock__brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  height: 40px;
+  margin-right: 8px;
+  padding: 0 14px 0 8px;
+  border-radius: 12px;
+  font-weight: 800;
+  font-size: 17px;
+  letter-spacing: -0.02em;
+  color: var(--color-text);
+  transform-origin: 50% 0;
+  will-change: width, height, transform;
+}
+
+.moody-dock__brand-mark {
+  width: 30px;
+  height: 30px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, var(--color-primary) 0%, #7C5CFA 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 6px 16px rgba(91, 61, 245, 0.35);
+  flex: none;
+}
+
+.moody-dock__divider {
+  width: 1px;
+  height: 22px;
+  background: var(--color-border);
+  margin: 0 8px 0 4px;
+  flex: none;
+}
+
+@media (max-width: 1024px) {
+  .moody-dock-wrap { display: none; }
+}
+
+/* ============================================================
+   @designcodeio/threeui — shader frame host for ConstellationField
+   ============================================================ */
+.shader-frame {
+  position: relative;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  background: #000;
+  isolation: isolate;
+}
+
+.shader-frame .shader-frame__inner {
+  position: absolute;
+  inset: 0;
+}
+
+.shader-frame::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  border-radius: inherit;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: inset 0 0 60px rgba(124, 92, 250, 0.18);
+}
+
+.shader-frame__badge {
+  position: absolute;
+  z-index: 3;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 7px 13px;
+  border-radius: 999px;
+  background: rgba(10, 10, 18, 0.55);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  color: rgba(255, 255, 255, 0.92);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+/* threeui ConstellationField iframe fills its parent */
+.shader-frame iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* Keep the threeui lumen CTA stage transparent so it sits on our cards */
+.hero-cta .lumen-cta {
+  background: transparent;
+  width: auto;
+  height: auto;
+  min-height: 0;
+}
+
+/* ============================================================
+   21st.dev "How It Works" — connected workflow
+   ============================================================ */
+.hiw-grid {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 18px;
+}
+
+.hiw-connector {
+  position: absolute;
+  top: 46px;
+  left: 8%;
+  right: 8%;
+  height: 2px;
+  background: repeating-linear-gradient(
+    to right,
+    rgba(91, 61, 245, 0.35) 0,
+    rgba(91, 61, 245, 0.35) 8px,
+    transparent 8px,
+    transparent 16px
+  );
+  z-index: 0;
+}
+
+.hiw-card {
+  position: relative;
+  z-index: 1;
+  padding: 24px 22px;
+  border-radius: var(--radius-md);
+  background: var(--color-card);
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-card);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.hiw-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(91, 61, 245, 0.35);
+  box-shadow: 0 16px 40px rgba(91, 61, 245, 0.14);
+}
+
+.hiw-stage {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 13px;
+  background: var(--color-lavender);
+  color: var(--color-primary);
+  margin-bottom: 14px;
+}
+
+.hiw-card h3 { font-size: 16.5px; margin-bottom: 8px; }
+
+.hiw-card p {
+  margin: 0;
+  font-size: 13.5px;
+  line-height: 1.6;
+  color: var(--color-text-muted);
+}
+
+.hiw-badge {
+  display: inline-block;
+  margin-top: 16px;
+  padding: 4px 11px;
+  border-radius: 999px;
+  font-size: 11.5px;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  background: var(--color-lavender);
+  color: var(--color-primary);
+}
+
+@media (max-width: 860px) {
+  .hiw-connector { display: none; }
+}
+
+/* ============================================================
+   Aceternity UI — Infinite Moving Cards
+   ============================================================ */
+.infinite-scroll-container {
+  position: relative;
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+  mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+}
+
+.infinite-scroll-track {
+  display: flex;
+  width: max-content;
+  gap: 20px;
+  padding-block: 8px;
+  animation: infinite-scroll-left 38s linear infinite;
+}
+
+.infinite-scroll-container:hover .infinite-scroll-track,
+.infinite-scroll-container:focus-within .infinite-scroll-track {
+  animation-play-state: paused;
+}
+
+.infinite-scroll-track[data-reverse="true"] {
+  animation-name: infinite-scroll-right;
+}
+
+@keyframes infinite-scroll-left {
+  from { transform: translateX(0); }
+  to { transform: translateX(calc(-50% - 10px)); }
+}
+
+@keyframes infinite-scroll-right {
+  from { transform: translateX(calc(-50% - 10px)); }
+  to { transform: translateX(0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .infinite-scroll-track { animation: none; }
+}
+
+.infinite-card {
+  position: relative;
+  width: 340px;
+  max-width: 86vw;
+  flex: none;
+  padding: 24px;
+  border-radius: var(--radius-md);
+  background: var(--color-card);
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-card);
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.infinite-card:hover {
+  border-color: rgba(91, 61, 245, 0.4);
+  box-shadow: 0 16px 40px rgba(91, 61, 245, 0.12);
+}
+
+.infinite-card__quote {
+  margin: 0;
+  font-size: 14.5px;
+  line-height: 1.65;
+  color: var(--color-text);
+}
+
+.infinite-card__source {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 18px;
+}
+
+.infinite-card__avatar {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-lavender);
+  color: var(--color-primary);
+  flex: none;
+}
+
+.infinite-card__title { font-weight: 700; font-size: 14px; }
+.infinite-card__subtitle { font-size: 12.5px; color: var(--color-text-muted); margin-top: 2px; }
+
+/* ============================================================
+   Moody all-black footer
+   ============================================================ */
+.footer-moony {
+  background: #0A0A0C;
+  color: rgba(255, 255, 255, 0.92);
+  margin-top: 48px;
+}
+
+.footer-moony a { color: rgba(255, 255, 255, 0.62); transition: color 0.2s ease; }
+.footer-moony a:hover { color: #fff; }
+
+.footer-moony__divider {
+  height: 1px;
+  background: rgba(255, 255, 255, 0.1);
+  margin: 36px auto;
+  max-width: 560px;
+}
+
+.footer-moony__nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px 30px;
+  font-size: 14.5px;
+  font-weight: 500;
+}
+
+.footer-moony__bottom {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.45);
+}
+
+.footer-moony__social {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.footer-moony__social a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: rgba(255, 255, 255, 0.7);
+  transition: all 0.2s ease;
+}
+
+.footer-moony__social a:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.3);
+  color: #fff;
+}
+
+.footer-moony__legal {
+  text-align: center;
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.35);
+  margin-top: 26px;
+}

@@ -1,7 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap");
 
-@import "@designcodeio/threeui/style.css";
-
 :root {
   --color-primary: #5B3DF5;
   --color-white: #ffffff;

@@ -2,7 +2,6 @@ import React from "react";
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
-// import { RectangleButtons } from "@designcodeio/threeui/components/RectangleButtons";
 
 export default function Hero() {
   const navigate = useNavigate();

@@ -1,5 +1,5 @@
 import React from 'react';
-import { ScanEye, MapPin, ShieldCheck, Activity, Layers, Flame, FileDown } from 'lucide-react';
+import { ScanEye, ShieldCheck, Activity, Layers, Flame } from 'lucide-react';
 
 // const CARDS = [
 //   {

@@ -1,0 +1,35 @@
+{
+  "problem_statement_id": "26038",
+  "task": "referable diabetic retinopathy screening",
+  "model": "torchvision.resnet18",
+  "image_size": 224,
+  "threshold": 0.21000000000000002,
+  "metrics": {
+    "threshold": 0.21000000000000002,
+    "accuracy": 0.71,
+    "precision": 0.34375,
+    "recall_sensitivity": 0.5789473684210527,
+    "specificity": 0.7407407407407407,
+    "f1": 0.43137254901960786,
+    "roc_auc": 0.7251461988304093,
+    "confusion_matrix": [
+      [
+        60,
+        21
+      ],
+      [
+        8,
+        11
+      ]
+    ]
+  },
+  "device_used": "cpu",
+  "quality_flags": [
+    "possible_blur",
+    "poor_brightness",
+    "low_contrast",
+    "limited_fundus_coverage"
+  ],
+  "review_policy": "abstain when quality flags exist or probability is between 0.35 and 0.65",
+  "clinical_note": "Research prototype only. Not a medical diagnosis or substitute for clinician review."
+}
